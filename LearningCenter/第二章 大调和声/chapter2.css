@@ -1,0 +1,252 @@
+/* 第二章特定样式 */
+.image-container {
+    text-align: center;
+    margin: 25px auto; /* 居中图片容器 */
+    max-width: 500px; /* 进一步调整图片最大宽度 */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.piano-window {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.piano-window h4 {
+    color: #4a7694;
+    margin-bottom: 20px;
+}
+
+.play-btn {
+    background: #4a7694;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.play-btn:hover {
+    background: #3a6684;
+}
+
+/* 钢琴键盘样式 (参考第一章) */
+.piano-keyboard {
+    background: transparent;
+    border: none;
+    padding: 15px 0;
+    margin: 15px 0;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    min-height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #4a7694 #f1f1f1;
+}
+
+.piano-keyboard::-webkit-scrollbar {
+    height: 6px;
+}
+
+.piano-keyboard::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.piano-keyboard::-webkit-scrollbar-thumb {
+    background: #4a7694;
+    border-radius: 3px;
+}
+
+.piano-keyboard::-webkit-scrollbar-thumb:hover {
+    background: #3a6684;
+}
+
+.keyboard-keys {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 10px;
+    min-width: fit-content;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+}
+
+.piano-key {
+    background: #ffffff;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 0 0 6px 6px;
+    padding: 45px 8px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 35px;
+    height: 100px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.piano-key:hover {
+    background: #f8f8f8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.piano-key.active {
+    background: #2c5aa0;
+    color: white;
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.piano-key.black {
+    background: #2c2c2c;
+    color: white;
+    position: relative;
+    z-index: 2;
+    margin: 0 -12px;
+    padding: 30px 6px 12px;
+    min-width: 22px;
+    height: 65px;
+    border: 2px solid #1a1a1a;
+    border-radius: 0 0 4px 4px;
+}
+
+.piano-key.black:hover {
+    background: #3a3a3a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.piano-key.black.active {
+    background: #1a3a5c;
+    color: white;
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .piano-key {
+        min-width: 24px;
+        height: 70px;
+        padding: 30px 4px 8px;
+        font-size: 10px;
+    }
+    
+    .piano-key.black {
+        min-width: 14px;
+        height: 45px;
+        padding: 20px 3px 6px;
+        margin: 0 -7px;
+    }
+}
+
+@media (max-width: 480px) {
+    .piano-key {
+        min-width: 20px;
+        height: 60px;
+        padding: 25px 3px 6px;
+        font-size: 9px;
+    }
+    
+    .piano-key.black {
+        min-width: 12px;
+        height: 38px;
+        padding: 15px 2px 5px;
+        margin: 0 -6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .piano-key {
+        min-width: 18px;
+        height: 55px;
+        padding: 22px 2px 5px;
+        font-size: 8px;
+    }
+    
+    .piano-key.black {
+        min-width: 10px;
+        height: 35px;
+        padding: 12px 1px 4px;
+        margin: 0 -5px;
+    }
+}
+
+/* 新增：知识点总结表格 */
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* 保证圆角生效 */
+}
+
+.summary-table thead tr {
+    background-color: #4a7694;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.summary-table th,
+.summary-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.summary-table tbody tr {
+    background-color: #f8f9fa;
+}
+
+.summary-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4a7694;
+}
+
+.summary-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 新增：图片标题 */
+.image-container figcaption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+}
+
+/* 新增：引用块样式 */
+.blockquote-style {
+    background-color: #f8f9fa;
+    border-left: 5px solid #4a7694;
+    margin: 20px 0;
+    padding: 15px 20px;
+    font-style: italic;
+    color: #333;
+}
+
+.blockquote-style p {
+    margin-bottom: 10px;
+}
+
+.blockquote-style p:last-child {
+    margin-bottom: 0;
+}
